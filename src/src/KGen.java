@@ -7,16 +7,16 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class KGen {
-	private static String data = "";
+	private  String data = "";
 	//Map <String, Integer>Kgen;
 	
 	
-	public static Map<String,Integer> getKgenMap (int size){
+	public Map<String,Integer> getKgenMap (int size){
 		
 		Map<String, Integer> mapa = new HashMap<>();
-		int contador=0;
+		//int contador=0;
 		
-				for (int i =1; i<=data.length() - size ; i+=size) {
+				for (int i =0; i<=data.length() - size ; i++) {
 					String combinacion = data.substring(i, i+size);
 					if(mapa.containsKey(combinacion)) {
 						mapa.put(combinacion,mapa.get(combinacion)+1);
@@ -29,7 +29,7 @@ public class KGen {
 	}
 		
 	
-	public static boolean remplazar(String fileName) {
+	public  boolean remplazar(String fileName) {
 			
 			boolean resultado = false;
 			Scanner sc = null;

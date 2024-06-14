@@ -10,6 +10,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		String fileName;
 		String respuesta= "";
+		KGen miGen = new KGen();
 		int size = 0;
 		boolean continuar = true;
 		//C:\Users\marii\OneDrive\Escritorio\copyFASTA.txt
@@ -26,14 +27,14 @@ public class Main {
 			if (respuesta.compareTo("1")== 0) {
 				System.out.println("Ingrese el fichero en el que se encuentre la cadena de ADN");
 				fileName = sc.nextLine();	
-				KGen.remplazar(fileName);
+				miGen.remplazar(fileName);
 			
 			} else if (respuesta.compareTo("2")== 0) {
 			
 				System.out.println("Ingrese el tamaño de la combinación");
 				size=Integer.valueOf(sc.nextLine());
-				KGen.getKgenMap(size);
-				Map <String, Integer>mapa = KGen.getKgenMap(size);
+				miGen.getKgenMap(size);
+				Map <String, Integer>mapa = miGen.getKgenMap(size);
 				
 				for(String combi : mapa.keySet()) {
 					System.out.println("La combinación " + combi + " esta: " + mapa.get(combi) + " veces");
